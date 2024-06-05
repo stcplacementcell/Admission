@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage with Google Sheet</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            width: 100%;
+            text-align: center;
+        }
+
+        header iframe {
+            width: 100%;
+            height: 315px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .side-image, .center-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .side-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .center-content iframe {
+            width: 600px;
+            height: 400px;
+            border: none;
+        }
+
+        footer img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_i5HkOnUFhY?autoplay=1&loop=1&playlist=_i5HkOnUFhY&controls=0&modestbranding=1&mute=1" frameborder="0" allowfullscreen></iframe>
+
+    </header>
+
+    <main>
+        <div class="side-image">
+            <img src="left-image.jpg" alt="Left Image">
+        </div>
+        <div class="center-content">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?widget=true&amp;headers=false"></iframe>
+        </div>
+        <div class="side-image">
+            <img src="right-image.jpg" alt="Right Image">
+        </div>
+    </main>
+
+    <footer>
+        <img src="footer-image.jpg" alt="Footer Image">
+    </footer>
+</body>
+</html>
