@@ -20,32 +20,35 @@
 
         header iframe {
             width: 100%;
-            height: 280px;
+            height: 20vh;
         }
 
         main {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 100%;
+            padding: 10px;
         }
 
         .side-image, .center-content {
-            flex: 1;
+            flex: 1 1 100%;
             text-align: center;
+            margin: 10px 0;
         }
 
         .side-image img {
-            width: 80%;
-            height: 650px;
+            width: 90%;
+            max-width: 300px;
+            height: auto;
         }
 
         .center-content iframe {
-            width: 630px;
+            width: 100% !important;
             height: 600px;
             border: none;
         }
-
 
         footer {
             width: 100%;
@@ -56,7 +59,7 @@
         }
 
         .marquee {
-            font-size: 2vw;
+            font-size: 4vw;
             color: #fff;
             font-family: 'Courier New', Courier, monospace;
             height: 2.5vw;
@@ -65,45 +68,67 @@
             position: relative;
         }
 
-
-        .container { 
-            position: relative; 
-            border:1px solid #777;  
+        .container {
+            position: relative;
+            border: 1px solid #777;
             background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
-            font-family:'Oswald',serif;
-        } 
+            font-family: 'Oswald', serif;
+        }
 
-        .container, .container .headertext { 
-            padding: 7px; 
-            background-color: #fff; 
-            color: #626060; 
-            font-weight: bold; 
-        } 
+        .container, .container .headertext {
+            padding: 7px;
+            background-color: #fff;
+            color: #626060;
+            font-weight: bold;
+        }
 
-        .container .headertext { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            z-index: 10; 
+        .container .headertext {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
             padding: 10px 10px;
-            border-right:1px solid #777;  
-            background:#C8102E;
-            color:#fff ;
-                text-shadow: 1px 1px #111;
-        } 
+            border-right: 1px solid #777;
+            background: #C8102E;
+            color: #fff;
+            text-shadow: 1px 1px #111;
+        }
 
-        .container marquee { 
-            line-height: 1.5; 
-        } 
+        .container marquee {
+            line-height: 1.5;
+        }
 
-        .container marquee p { 
-            margin: 0; 
-        } 
+        .container marquee p {
+            margin: 0;
+        }
 
-</style>
+        @media (min-width: 600px) {
+            .side-image, .center-content {
+                flex: 1;
+            }
+
+            .side-image img {
+                width: 80%;
+                height: auto;
+            }
+
+            .center-content iframe {
+                width: 80%;
+                height: 600px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(function() {
+                location.reload();
+            }, 50000); // 50 seconds
+        });
+    </script>
 </head>
 <body>
-    <header style="background-color: rgb(219, 217, 217); padding: 20px;">
+    <header style="background-color: rgb(219, 217, 217); padding: 15px;">
         <h1 style="font-size: 4.5em; margin: 0; color:#a84040">UG Admission 2024</h1>
         <h1 style="font-size: 2.5em; margin: 0; color:#a84040">St. Thomas College (Autonomous), Thrissur</h1>
     </header>
@@ -113,7 +138,7 @@
             <img src="1.jpg" alt="Left Image">
         </div>
         <div class="center-content">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?gid=0&single=true&widget=true&headers=false&chrome=false&widget=true&rm=minimal" width="100%" height="600"></iframe>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?gid=0&single=true&widget=true&headers=false&chrome=false&widget=true&rm=minimal"></iframe>
         </div>
         <div class="side-image">
             <img src="2.jpg" alt="Right Image">
@@ -122,9 +147,8 @@
 
     <footer>
         <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-        <div class="container"> 
-            <div class="headertext">Breaking News</div> 
-
+        <div class="container">
+            <div class="headertext">Breaking News</div>
             <div>
                 <marquee style="width:100%;color:red;" 
                 onmouseover="this.stop();" onmouseout="this.start();" 
@@ -135,33 +159,28 @@
                 Admission Cell St. Thomas College &nbsp;&nbsp;&nbsp; 
                 </marquee>
             </div>
-
-        </div> 
+        </div>
         <img src="logo-black.png" width="auto" height="180px">
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let carouselIndex = 0;
+            const slides = document.querySelectorAll('.carousel-slide img');
+            const totalSlides = slides.length;
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    let carouselIndex = 0;
-    const slides = document.querySelectorAll('.carousel-slide img');
-    const totalSlides = slides.length;
+            function showNextSlide() {
+                carouselIndex++;
+                if (carouselIndex >= totalSlides) {
+                    carouselIndex = 0;
+                }
+                const slideWidth = slides[0].clientWidth;
+                const newTransformValue = -carouselIndex * slideWidth;
+                document.querySelector('.carousel-slide').style.transform = `translateX(${newTransformValue}px)`;
+            }
 
-    function showNextSlide() {
-        carouselIndex++;
-        if (carouselIndex >= totalSlides) {
-            carouselIndex = 0;
-        }
-        const slideWidth = slides[0].clientWidth;
-        const newTransformValue = -carouselIndex * slideWidth;
-        document.querySelector('.carousel-slide').style.transform = `translateX(${newTransformValue}px)`;
-    }
-
-    setInterval(showNextSlide, 3000);
-});
-</script>
-
-
-
+            setInterval(showNextSlide, 3000);
+        });
+    </script>
 </body>
 </html>
