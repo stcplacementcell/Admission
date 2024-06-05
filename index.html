@@ -3,196 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission | Index Mark List</title>
+    <title>UG Admission 2024 - St. Thomas College</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Oswald', sans-serif;
         }
-
-        header, footer {
-            width: 100%;
+        header {
+            background-color: #365486;
+            padding: 15px;
             text-align: center;
         }
-
-        header iframe {
-            width: 100%;
-            height: 20vh;
+        header h1 {
+            margin: 0;
+            color: #dcf2f1;
         }
-
+        header h1:nth-child(2) {
+            font-size: 2.5em;
+            color: #7fc7d9;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .headertext {
+            color: #0f1035;
+            font-weight: bold;
+        }
+        marquee {
+            width: 100%;
+            color: red;
+        }
         main {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            width: 100%;
+        }
+        .side-image_1 {
+            flex: 1;
+            min-width: 200px;
             padding: 10px;
         }
-
-        .side-image, .center-content {
-            flex: 1 1 100%;
-            text-align: center;
-            margin: 10px 0;
+        .side-image_2 {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
         }
-
-        .side-image img {
-            width: 90%;
-            max-width: 300px;
+        .side-image_1 img {
+            width: 100%;
             height: auto;
         }
-
+        .side-image_2 img {
+            width: 100%;
+            height: auto;
+        }
+        .center-content {
+            flex: 2;
+            min-width: 300px;
+            padding: 10px;
+        }
         .center-content iframe {
-            width: 100% !important;
-            height: 80%;
-            min-height: 500px ;
+            width: 100%;
+            height: 100vh;
             border: none;
         }
-
         footer {
-            width: 100%;
-            background-color: whitesmoke;
-            color: black;
+            background-color: #365486;
+            padding: 15px;
             text-align: center;
-            padding: 10px 0;
+            color: #dcf2f1;
         }
-
-        .marquee {
-            font-size: 4vw;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            height: 2.5vw;
-            overflow: hidden;
-            background-color: #000;
-            position: relative;
+        footer img {
+            width: auto;
+            height: 150px;
         }
-
-        .container {
-            position: relative;
-            border: 1px solid #777;
-            background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
-            font-family: 'Oswald', serif;
-        }
-
-        .container, .container .headertext {
-            padding: 7px;
-            background-color: #fff;
-            color: #626060;
-            font-weight: bold;
-        }
-
-        .container .headertext {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            padding: 10px 10px;
-            border-right: 1px solid #777;
-            background: #C8102E;
-            color: #fff;
-            text-shadow: 1px 1px #111;
-        }
-
-        .container marquee {
-            line-height: 1.5;
-        }
-
-        .container marquee p {
-            margin: 0;
-        }
-
-        @media (min-width: 600px) {
-            .side-image, .center-content {
-                flex: 1;
+        @media (max-width: 768px) {
+            .side-image_1{
+                display: none;
+                flex: 1 1 100%;
             }
-
-            .side-image img {
-                width: 80%;
-                height: auto;
+            header h1:nth-child(2) {
+                font-size: 1.5em;
             }
-
+            .side-image_2, .center-content {
+                flex: 1 1 100%;
+            }
             .center-content iframe {
-                width: 80%;
-                height: 600px;
+                height: 50vh;
             }
+            footer img {
+            width: auto;
+            height: 70px;
+        }
         }
     </style>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            setInterval(function() {
-                location.reload();
-            }, 50000); // 50 seconds
-        });
-    </script>
 </head>
 <body>
-    <header style="background-color: #365486; padding: 15px;">
-        <h1 style="font-size: 4.5em; margin: 0; color:#dcf2f1">UG Admission 2024</h1>
-        <h1 style="font-size: 2.5em; margin: 0; color:#7fc7d9">St. Thomas College (Autonomous), Thrissur</h1>
+    <header>
+        <h1>UG Admission 2024</h1>
+        <h1>St. Thomas College (Autonomous), Thrissur</h1>
     </header>
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <div class="container">
         <div class="headertext">&nbsp;Live&nbsp;&nbsp;</div>
         <div>
-            <marquee style="width:100%;color:red;" 
-            onmouseover="this.stop();" onmouseout="this.start();" 
-            direction="left" behavior="scroll" scrollamount="20">
-            Index Update - UG Admission 2024, Day 1. St Thomas College (Autonomous), Thrissur
-            
+            <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left" behavior="scroll" scrollamount="10">
+                Index Update - UG Admission 2024, Day 1. St Thomas College (Autonomous), Thrissur
             </marquee>
         </div>
     </div>
     <main>
-
-        <div class="side-image">
+        <div class="side-image_1">
             <img src="1.jpg" alt="Left Image">
         </div>
         <div class="center-content">
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?gid=0&single=true&widget=true&headers=false&chrome=false&widget=true&rm=minimal"></iframe>
         </div>
-        <div class="side-image">
+        <div class="side-image_2">
             <img src="2.jpg" alt="Right Image">
         </div>
     </main>
-
     <footer>
-        <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <div class="container">
-            <div class="headertext">Powered by </div>
+            <div class="headertext">Powered by</div>
             <div>
-                <marquee style="width:100%;color:red;" 
-                onmouseover="this.stop();" onmouseout="this.start();" 
-                direction="left" behavior="scroll" scrollamount="20">
-                &nbsp; 
-                Placement Cell, St Thomas College (Autonomous), Thrissur collaborated with 
-                Admission Cell St. Thomas College (Autonomous), Thrissur &nbsp;&nbsp;&nbsp; 
+                <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left" behavior="scroll" scrollamount="10" style="color: white;">
+                    &nbsp; Placement Cell, St Thomas College (Autonomous), Thrissur collaborated with Admission Cell St. Thomas College (Autonomous), Thrissur &nbsp;&nbsp;&nbsp;
                 </marquee>
             </div>
         </div>
-        <img src="logo-black.png" width="auto" height="180px">
+        <img src="logo-black.png" alt="College Logo">
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let carouselIndex = 0;
-            const slides = document.querySelectorAll('.carousel-slide img');
-            const totalSlides = slides.length;
-
-            function showNextSlide() {
-                carouselIndex++;
-                if (carouselIndex >= totalSlides) {
-                    carouselIndex = 0;
-                }
-                const slideWidth = slides[0].clientWidth;
-                const newTransformValue = -carouselIndex * slideWidth;
-                document.querySelector('.carousel-slide').style.transform = `translateX(${newTransformValue}px)`;
-            }
-
-            setInterval(showNextSlide, 3000);
-        });
-    </script>
 </body>
 </html>
