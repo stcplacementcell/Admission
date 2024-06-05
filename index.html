@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage with Google Sheet</title>
+    <title>Admission | Index Mark List</title>
     <style>
         body {
             display: flex;
@@ -20,7 +20,7 @@
 
         header iframe {
             width: 100%;
-            height: 315px;
+            height: 280px;
         }
 
         main {
@@ -37,8 +37,8 @@
         }
 
         .side-image img {
-            max-width: 100%;
-            height: auto;
+            width: 70%;
+            height: 550px;
         }
 
         .center-content iframe {
@@ -47,32 +47,104 @@
             border: none;
         }
 
-        footer img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
+
+footer {
+    width: 100%;
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 200%; /* Assuming 2 images */
+    animation: slide 5s infinite ;
+}
+
+.carousel-slide img {
+    width: 100%;
+    flex: 1 0 100%;
+}
+
+.carousel-slide p
+{
+    width: auto;
+    height: auto;
+    text-align: inherit;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(-200%); }
+}
+
+</style>
 </head>
 <body>
     <header>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/_i5HkOnUFhY?autoplay=1&loop=1&playlist=_i5HkOnUFhY&controls=0&modestbranding=1&mute=1" frameborder="0" allowfullscreen></iframe>
-
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_i5HkOnUFhY?autoplay=1&loop=1&playlist=_i5HkOnUFhY&controls=0&modestbranding=1&mute=1" frameborder="0" allowfullscreen>
+            
+        </iframe>
     </header>
 
     <main>
         <div class="side-image">
-            <img src="left-image.jpg" alt="Left Image">
+            <img src="1.jpg" alt="Left Image">
         </div>
         <div class="center-content">
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?widget=true&amp;headers=false"></iframe>
         </div>
         <div class="side-image">
-            <img src="right-image.jpg" alt="Right Image">
+            <img src="2.jpg" alt="Right Image">
         </div>
     </main>
 
     <footer>
-        <img src="footer-image.jpg" alt="Footer Image">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="k.png" alt="Image 1"> 
+                <h1 style="font-size: 30px;">POWERED BY <Br>
+                    PLACEMENT CELL</h1>
+
+            </div>
+        </div>
     </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let carouselIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide img');
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+        carouselIndex++;
+        if (carouselIndex >= totalSlides) {
+            carouselIndex = 0;
+        }
+        const slideWidth = slides[0].clientWidth;
+        const newTransformValue = -carouselIndex * slideWidth;
+        document.querySelector('.carousel-slide').style.transform = `translateX(${newTransformValue}px)`;
+    }
+
+    setInterval(showNextSlide, 3000);
+});
+</script>
+
+
+
 </body>
 </html>
