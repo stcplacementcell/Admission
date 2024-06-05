@@ -161,7 +161,7 @@
             <video src="video_right.mp4" autoplay muted loop alt="Left Video"></video>
         </div>        
         <div class="center-content">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?gid=0&single=true&widget=true&headers=false&chrome=false&widget=true&rm=minimal"></iframe>
+            <iframe id="myIframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vThVHxFY0RVDlXuqX3U_eOx2_3E8ZXzDj5Xb3WNRpb9TXDr_u_zO2Zvrz_s6X0z3F3EUclLm3Yvu5HZ/pubhtml?gid=0&single=true&widget=true&headers=false&chrome=false&widget=true&rm=minimal"></iframe>
         </div>
         <div class="side-image_2">
             <video src="video_left.mp4" autoplay muted loop alt="Left Video"></video>
@@ -181,4 +181,10 @@
         <img src="logo-black.png" alt="College Logo">
     </footer>
 </body>
+<script>
+    setInterval(function() {
+        var iframe = document.getElementById('myIframe');
+        iframe.src = iframe.src; 
+    }, 15000); // 15000 milliseconds = 15 seconds
+</script>
 </html>
