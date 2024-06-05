@@ -37,8 +37,8 @@
         }
 
         .side-image img {
-            width: 70%;
-            height: 550px;
+            width: 80%;
+            height: 650px;
         }
 
         .center-content iframe {
@@ -48,56 +48,64 @@
         }
 
 
-footer {
-    width: 100%;
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    padding: 10px 0;
-}
+        footer {
+            width: 100%;
+            background-color: whitesmoke;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
+        .marquee {
+            font-size: 2vw;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            height: 2.5vw;
+            overflow: hidden;
+            background-color: #000;
+            position: relative;
+        }
 
-.carousel-slide {
-    display: flex;
-    width: 200%; /* Assuming 2 images */
-    animation: slide 5s infinite ;
-}
 
-.carousel-slide img {
-    width: 100%;
-    flex: 1 0 100%;
-}
+        .container { 
+            position: relative; 
+            border:1px solid #777;  
+            background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+            font-family:'Oswald',serif;
+        } 
 
-.carousel-slide p
-{
-    width: auto;
-    height: auto;
-    text-align: inherit;
-    font-size: 30px;
-    font-family: 'Times New Roman';
-    font-weight: bolder;
-    text-align: center;
+        .container, .container .headertext { 
+            padding: 7px; 
+            background-color: #fff; 
+            color: #626060; 
+            font-weight: bold; 
+        } 
 
-}
+        .container .headertext { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            z-index: 10; 
+            padding: 10px 10px;
+            border-right:1px solid #777;  
+            background:#C8102E;
+            color:#fff ;
+                text-shadow: 1px 1px #111;
+        } 
 
-@keyframes slide {
-    0% { transform: translateX(0%); }
-    50% { transform: translateX(-100%); }
-    100% { transform: translateX(-200%); }
-}
+        .container marquee { 
+            line-height: 1.5; 
+        } 
+
+        .container marquee p { 
+            margin: 0; 
+        } 
 
 </style>
 </head>
 <body>
-    <header>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/_i5HkOnUFhY?autoplay=1&loop=1&playlist=_i5HkOnUFhY&controls=0&modestbranding=1&mute=1" frameborder="0" allowfullscreen>
-            
-        </iframe>
+    <header style="background-color: rgb(121, 64, 92); padding: 20px;">
+        <h1 style="font-size: 4.5em; margin: 0; color:#fff">UG Admission 2024</h1>
     </header>
 
     <main>
@@ -113,14 +121,22 @@ footer {
     </main>
 
     <footer>
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="k.png" alt="Image 1"> 
-                <h1 style="font-size: 30px;">POWERED BY <Br>
-                    PLACEMENT CELL</h1>
+        <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+        <div class="container"> 
+            <div class="headertext">Breaking News</div> 
 
+            <div>
+                <marquee style="width:100%;color:red;" 
+                onmouseover="this.stop();" onmouseout="this.start();" 
+                direction="left" behavior="scroll" scrollamount="20">
+                St. Thomas College (Autonomous), Thrissur
+                |&nbsp;&nbsp;&nbsp; 
+                This Program is powered by PLACEMENT CELL, St. Thomas​ |&nbsp;&nbsp;&nbsp; 
+                Admission Cell St. Thomas College &nbsp;&nbsp;&nbsp; 
+                </marquee>
             </div>
-        </div>
+
+        </div> 
     </footer>
 
 
