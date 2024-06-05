@@ -23,11 +23,49 @@
             font-size: 2.5em;
             color: #7fc7d9;
         }
+        
+        .marquee {
+            font-size: 4vw;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            height: 2.5vw;
+            overflow: hidden;
+            background-color: #000;
+            position: relative;
+        }
+
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
+            position: relative;
+            border: 1px solid #777;
+            background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+            font-family: 'Oswald', serif;
+        }
+
+        .container, .container .headertext {
+            padding: 7px;
+            background-color: #fff;
+            color: #626060;
+            font-weight: bold;
+        }
+
+        .container .headertext {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            padding: 10px 10px;
+            border-right: 1px solid #777;
+            background: #C8102E;
+            color: #fff;
+            text-shadow: 1px 1px #111;
+        }
+
+        .container marquee {
+            line-height: 1.5;
+        }
+
+        .container marquee p {
+            margin: 0;
         }
         .headertext {
             color: #0f1035;
@@ -110,8 +148,11 @@
     <div class="container">
         <div class="headertext">&nbsp;Live&nbsp;&nbsp;</div>
         <div>
-            <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left" behavior="scroll" scrollamount="10">
-                Index Update - UG Admission 2024, Day 1. St Thomas College (Autonomous), Thrissur
+            <marquee style="width:100%;color:red;" 
+            onmouseover="this.stop();" onmouseout="this.start();" 
+            direction="left" behavior="scroll" scrollamount="10">
+            Index Update - UG Admission 2024, Day 1. St Thomas College (Autonomous), Thrissur
+            
             </marquee>
         </div>
     </div>
@@ -127,14 +168,16 @@
         </div>
     </main>
     <footer>
-        <div class="container">
-            <div class="headertext">Powered by</div>
+            <div class="headertext">Powered by </div>
             <div>
-                <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left" behavior="scroll" scrollamount="10" style="color: white;">
-                    &nbsp; Placement Cell, St Thomas College (Autonomous), Thrissur collaborated with Admission Cell St. Thomas College (Autonomous), Thrissur &nbsp;&nbsp;&nbsp;
+                <marquee style="width:100%;color:white;" 
+                onmouseover="this.stop();" onmouseout="this.start();" 
+                direction="left" behavior="scroll" scrollamount="20">
+                &nbsp; 
+                Placement Cell, St Thomas College (Autonomous), Thrissur collaborated with 
+                Admission Cell St. Thomas College (Autonomous), Thrissur &nbsp;&nbsp;&nbsp; 
                 </marquee>
             </div>
-        </div>
         <img src="logo-black.png" alt="College Logo">
     </footer>
 </body>
